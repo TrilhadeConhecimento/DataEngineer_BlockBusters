@@ -166,4 +166,4 @@ O Spark oferece diversas APIs para diferentes tipos de processamento e análise 
     ```
 ## Referências Adicionais
 
-Para aprofundar seus conhecimentos em Apache Spark e PySpark, recomendamos o curso "Introdução ao Apache Spark com PySpark" disponível na Udemy. Este curso oferece uma visão abrangente do Spark, desde a instalação até a execução de tarefas complexas de processamento de dados. Você pode acessar o curso [aqui](https://www.udemy.com/course/introducao-ao-apache-spark-com-pyspark/).
+Para aprofundar seus conhecimentos em Apache Spark e PySpark, recomenda-se o curso "Introdução ao Apache Spark com PySpark" disponível na Udemy. Este curso oferece uma visão abrangente do Spark, desde a instalação até a execução de tarefas de processamento de dados. Você pode acessar o curso [aqui](https://www.udemy.com/course/introducao-ao-apache-spark-com-pyspark/).
