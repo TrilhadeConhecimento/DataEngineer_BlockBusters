@@ -59,11 +59,11 @@ Para carregar os arquivos CSV no Databricks:
 
 1. Clique em "File" no menu superior e depois em "Upload Data":
 
-[image]
+<img src="./images/tutorial_1.png" alt="upload data image" width="450">
 
 1. Na janela de upload, selecione os arquivos CSV:
 
-[image]
+<img src="./images/tutorial_2.png" alt="upload data image" width="450">
 
 1. Clique em "Next" e selecione a opção para ler os arquivos com PySpark.
 2. Clique em "Copy" para copiar o comando de leitura e depois em "Done".
