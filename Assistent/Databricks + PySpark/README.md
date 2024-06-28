@@ -1,5 +1,5 @@
 # Databricks + PySpark
-## Introdução
+# Introdução
 
 ### O que é Databricks
 
@@ -58,15 +58,15 @@ print("Hello World")
 Para carregar os arquivos CSV no Databricks:
 
 1. Clique em "File" no menu superior e depois em "Upload Data":
-
-<img src="./images/tutorial_1.png" alt="upload data image" width="450">
-
-1. Na janela de upload, selecione os arquivos CSV:
-
-<img src="./images/tutorial_2.png" alt="upload data image" width="450">
-
-1. Clique em "Next" e selecione a opção para ler os arquivos com PySpark.
-2. Clique em "Copy" para copiar o comando de leitura e depois em "Done".
+    
+    <img src="./images/tutorial_1.png" alt="upload data image" width="450">
+    
+2. Na janela de upload, selecione os arquivos CSV:
+    
+    <img src="./images/tutorial_2.png" alt="upload data image" width="450">
+    
+3. Clique em "Next" e selecione a opção para ler os arquivos com PySpark.
+4. Clique em "Copy" para copiar o comando de leitura e depois em "Done".
 
 ### Executando o Comando no Notebook
 
@@ -104,6 +104,39 @@ df1.write.format("csv").mode("overwrite").save("/caminho/para/salvar.csv")
 # Acrescentando ao arquivo existente
 df1.write.format("csv").mode("append").save("/caminho/para/salvar.csv")
 
+```
+
+### Mais Opções de Leitura
+
+Para configurar a leitura de arquivos CSV, você pode definir várias opções, como a inclusão de um cabeçalho, o delimitador de campos e o encoding do arquivo.
+
+```python
+# Definindo a primeira linha como cabeçalho e especificando o delimitador como vírgula
+df_carros = spark.read.format("csv").option("header", True).option("delimiter", ",").load("/caminho/do/arquivo.csv")
+display(df_carros)
+
+# Outra forma de especificar o delimitador é utilizando o parâmetro "sep" diretamente no método load
+df_carros = spark.read.format("csv").option("header", True).load("/caminho/do/arquivo.csv", sep=",")
+
+# Caso seja necessário especificar o encoding, adicione a opção correspondente
+df_carros = spark.read.format("csv").option("header", True).option("delimiter", ",").option("encoding", "utf-8").load("/caminho/do/arquivo.csv")
+
+```
+
+Além de arquivos CSV, é possível ler e escrever arquivos em outros formatos como Parquet, Avro e JSON:
+
+```python
+# Salvando o DataFrame em diferentes formatos
+df_carros.write.format("parquet").save("/caminho/onde/deseja/salvar")
+df_carros.write.format("avro").save("/caminho/onde/deseja/salvar")
+df_carros.write.format("json").save("/caminho/onde/deseja/salvar")
+```
+
+Para ler arquivos , o processo é similar:
+
+```python
+# Lendo um arquivo JSON
+df_json = spark.read.format("json").load("/caminho/do/arquivo/json")
 ```
 
 ### Considerações Finais
