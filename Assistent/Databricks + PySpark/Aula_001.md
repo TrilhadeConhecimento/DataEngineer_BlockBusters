@@ -1,4 +1,3 @@
-# Databricks + PySpark
 # Introdução
 
 ### O que é Databricks
